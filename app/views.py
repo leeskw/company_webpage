@@ -1,11 +1,8 @@
-from datetime import datetime
-
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import connection
-from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 from django.utils import timezone
