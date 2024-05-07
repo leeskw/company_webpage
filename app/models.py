@@ -95,7 +95,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=255) 
     author = models.ForeignKey(Author, on_delete=models.PROTECT, null=True, blank=True) 
     created_at = models.DateTimeField(default=timezone.now) 
-    content = RichTextField()  #  content = models.TextField()   
+    content = models.TextField()   
     
     def __str__(self):
         return self.title

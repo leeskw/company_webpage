@@ -36,7 +36,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'app.apps.AppConfig',  # new
-    'ckeditor',  # 3rd party  
+    'django_summernote',  # 3rd party  
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,15 +135,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email config.
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # smtp.googlemail.com
+EMAIL_HOST = 'smtp.gmail.com'  
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'leeskw2@gmail.com'
 EMAIL_HOST_PASSWORD = 'wlbvhjuuxmoxnzvs' # app password 
 # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') # app password 
 EMAIL_USE_TLS = True
-
-CKEDITOR_CONFIGS = {
-    "default": {
-        "versionCheck": False
-    }
-}

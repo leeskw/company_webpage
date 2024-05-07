@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 from app.views import blog_detail, blogs, contact_form, index
 
@@ -25,4 +25,5 @@ urlpatterns = [
     path('contact/', contact_form, name='contact_form'),
     path('blog-detail/<int:blog_id>/', blog_detail, name='blog_detail'),
     path('blogs/', blogs, name='blogs'),
+    path('summernote', include('django_summernote.urls')),
 ]

@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 
 from .models import (Author, Blog, ContactFormLog, FrequentlyAskedQuestions,
                      GeneralInfo, Service, Testimonial)
@@ -98,8 +99,12 @@ class AuthorAdmin(admin.ModelAdmin):
     ]
 
 
+class SummerAdmin(SummernoteModelAdmin):
+    summernote_fields = ('content',)  # ('content',)['__all__']
+
+
 @admin.register(Blog)
-class BlogAdmin(admin.ModelAdmin):
+class BlogAdmin(SummerAdmin):  # class BlogAdmin(admin.ModelAdmin):
     list_display = [
       'author', 
       'category', 
